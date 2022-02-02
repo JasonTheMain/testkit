@@ -57,7 +57,9 @@ func (v *vault) Start() {
 		v.logger.Println("Waiting for vault to be ready..")
 		s := v.safe("get", "secret/handshake")
 		s.Stdout = ioutil.Discard
+		v.logger.Println(s.Stdout)
 		s.Stderr = ioutil.Discard
+		v.logger.Println(s.Stderr)
 		s.Run()
 		return s.ProcessState.ExitCode()
 	}, "5s", "500ms").Should(Equal(0))
