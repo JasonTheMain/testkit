@@ -1,4 +1,4 @@
-module github.com/genesis-community/testkit
+module github.com/JasonTheMain/testkit
 
 go 1.14
 
